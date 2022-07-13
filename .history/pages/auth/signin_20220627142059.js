@@ -1,8 +1,9 @@
-import { getProviders, signIn } from "next-auth/react";
+import { getProviders, signIn as SignIntoProvider } from "next-auth/react";
 import React from "react";
 import Header from "../../components/Header";
 
-function SignIn({ providers }) {
+function signIn({ providers }) {
+  const checkProviders = providers && providers.length;
   return (
     <>
       <Header />
@@ -15,12 +16,14 @@ function SignIn({ providers }) {
         </p>
 
         <div className="mt-40">
-          {providers &&
+          {checkProviders &&
             Object.values(providers).map((provider) => (
               <div key={provider.name}>
                 <button
                   className=" p-3 bg-blue-500  rounded-lg text-white"
-                  onClick={() => signIn(provider.id, { callbackUrl: "/" })}
+                  onClick={() =>
+                    SignIntoProvider(provider.id, { callbackUrl: "/" })
+                  }
                 >
                   Sign In With {provider.name}
                 </button>
@@ -32,7 +35,7 @@ function SignIn({ providers }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const providers = await getProviders();
 
   return {
@@ -42,4 +45,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default SignIn;
+export default signIn;

@@ -1,8 +1,18 @@
 import { getProviders, signIn } from "next-auth/react";
 import React from "react";
+
 import Header from "../../components/Header";
 
 function SignIn({ providers }) {
+  const obj = undefined;
+
+  if (obj) {
+    const keys = Object.keys(obj);
+  } else {
+    // 👇️ this runs
+    console.log("⛔️ Object is falsy");
+  }
+
   return (
     <>
       <Header />
@@ -32,7 +42,7 @@ function SignIn({ providers }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const providers = await getProviders();
 
   return {

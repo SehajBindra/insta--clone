@@ -24,7 +24,7 @@ function Posts() {
           username={post.data().username}
           userImg={post.data().profileImg}
           img={post.data().image}
-          caption={post.data().captionRef}
+          caption={post.data().caption}
         />
       ))}
     </div>

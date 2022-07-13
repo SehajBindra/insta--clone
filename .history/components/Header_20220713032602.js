@@ -19,6 +19,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtom";
+import SignIn from "../pages/auth/signin";
 
 function Header() {
   const { data: session } = useSession();
@@ -94,7 +95,7 @@ function Header() {
               />
             </>
           ) : (
-            <button onClick={signIn}> Sign in</button>
+            <button onClick={SignIn}> Sign in</button>
           )}
         </div>
       </div>

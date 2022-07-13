@@ -15,24 +15,23 @@ function SignIn({ providers }) {
         </p>
 
         <div className="mt-40">
-          {providers &&
-            Object.values(providers).map((provider) => (
-              <div key={provider.name}>
-                <button
-                  className=" p-3 bg-blue-500  rounded-lg text-white"
-                  onClick={() => signIn(provider.id, { callbackUrl: "/" })}
-                >
-                  Sign In With {provider.name}
-                </button>
-              </div>
-            ))}
+          {Object.values(providers).map((provider) => (
+            <div key={provider.name}>
+              <button
+                className=" p-3 bg-blue-500  rounded-lg text-white"
+                onClick={() => signIn(provider.id, { callbackUrl: "/" })}
+              >
+                Sign In With {provider.name}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </>
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const providers = await getProviders();
 
   return {

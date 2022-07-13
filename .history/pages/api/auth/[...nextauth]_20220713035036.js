@@ -12,8 +12,7 @@ export default NextAuth({
     // ...add more providers here
   ],
 
-  secret: process.env.NEXTAUTH_SECRET,
-  secret: process.env.NEXT_AUTH_JWT_SECRET,
+  // secret: process.env.NEXTAUTH_SECRET,
 
   pages: {
     signIn: "/auth/signin",
@@ -30,6 +29,13 @@ export default NextAuth({
       session.user.uid = token.sub;
 
       return session;
+    },
+
+    async signIn({ account, profile }) {
+      if (account.provider === "google") {
+        return profile.email_verified && profile.email.endsWith("@example.com");
+      }
+      return true; // Do different verification for other providers that don't have `email_verified`
     },
   },
 });
