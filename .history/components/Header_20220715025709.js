@@ -95,7 +95,7 @@ function Header() {
             </>
           ) : (
             <button
-              className=" text-base space-x-2 text-blue-500"
+              className=" text-base space-x-2 text-blue-400"
               onClick={signIn}
             >
               {" "}
