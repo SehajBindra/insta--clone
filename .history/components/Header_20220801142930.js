@@ -5,7 +5,6 @@ import { RiMessengerLine } from "react-icons/ri";
 import { BsPlusSquare } from "react-icons/bs";
 import { MdOutlineExplore } from "react-icons/md";
 import { MdHomeFilled } from "react-icons/md";
-import { FiPlusSquare } from "react-icons/fi";
 
 import {
   SearchIcon,
@@ -32,7 +31,7 @@ function Header() {
       <div className="flex justify-between max-w-6xl mx-5 xl:mx-auto ">
         <div
           onClick={() => router.push("/")}
-          className="relative w-56  sm:inline-grid sm:w-24 cursor-pointer "
+          className="relative w-60  sm:inline-grid sm:w-24 cursor-pointer "
         >
           <Image
             src="https://links.papareact.com/ocw"
@@ -53,9 +52,9 @@ function Header() {
         </div>
 
         {/* Middle Search Input Field */}
-        <div className=" min-w-sm ml-2">
+        <div className=" max-w-fit ml-2">
           <div className=" relative mt-1  p-3 rounded-md ">
-            <div className=" absolute inset-y-3  pl-2 flex items-center pointer-events-none ">
+            <div className=" absolute inset-y-3  pl-3 flex items-center pointer-events-none ">
               <SearchIcon className="h-5  w-5 text-gray-500" />
             </div>
             <input
@@ -79,9 +78,9 @@ function Header() {
                 </div>
               </div>
 
-              <FiPlusSquare
+              <BsPlusSquare
                 onClick={() => Setopen(true)}
-                className="h-8 w-10 cursor-pointer"
+                className="h-8 w-8 cursor-pointer"
               />
               {/* <UserGroupIcon className="navBtn"/> */}
               <MdOutlineExplore className=" hidden h-7  w-8 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out   " />
@@ -89,7 +88,7 @@ function Header() {
 
               <img
                 onClick={signOut}
-                className="h-7 w-7 rounded-full  cursor-pointer"
+                className="h-6 w-6 rounded-full  cursor-pointer"
                 src={session?.user?.image}
                 alt="profile pic"
               />

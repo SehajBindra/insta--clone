@@ -5,7 +5,6 @@ import { RiMessengerLine } from "react-icons/ri";
 import { BsPlusSquare } from "react-icons/bs";
 import { MdOutlineExplore } from "react-icons/md";
 import { MdHomeFilled } from "react-icons/md";
-import { FiPlusSquare } from "react-icons/fi";
 
 import {
   SearchIcon,
@@ -79,7 +78,7 @@ function Header() {
                 </div>
               </div>
 
-              <FiPlusSquare
+              <BsPlusSquare
                 onClick={() => Setopen(true)}
                 className="h-8 w-10 cursor-pointer"
               />
