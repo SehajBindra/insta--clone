@@ -89,7 +89,7 @@ function Header() {
 
               <img
                 onClick={signOut}
-                className="h-5 w-5 rounded-full  pointer-events-auto cursor-pointer"
+                className="h-5 w-5 rounded-full  cursor-pointer"
                 src={session?.user?.image}
                 alt="profile pic"
               />

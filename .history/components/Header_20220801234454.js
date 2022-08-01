@@ -28,7 +28,7 @@ function Header() {
 
   console.log(session);
   return (
-    <div className="shadow-sm border-b  bg-white sticky top-0 z-50">
+    <div className="shadow-sm border-b  bg-black sticky top-0 z-50">
       <div className="flex justify-between max-w-6xl mx-5 xl:mx-auto ">
         <div
           onClick={() => router.push("/")}
@@ -89,7 +89,7 @@ function Header() {
 
               <img
                 onClick={signOut}
-                className="h-5 w-5 rounded-full  pointer-events-auto cursor-pointer"
+                className="h-5 w-5 rounded-full  cursor-pointer"
                 src={session?.user?.image}
                 alt="profile pic"
               />

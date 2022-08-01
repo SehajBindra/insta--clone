@@ -53,7 +53,7 @@ function Header() {
         </div>
 
         {/* Middle Search Input Field */}
-        <div className=" min-w-sm ml-2">
+        <div className="hidden lg:min-w-sm  lg:ml-2">
           <div className=" relative mt-1  p-3 rounded-md ">
             <div className=" absolute inset-y-3  pl-2 flex items-center pointer-events-none ">
               <SearchIcon className="h-5  w-5 text-gray-500" />
