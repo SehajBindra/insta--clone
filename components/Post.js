@@ -3,7 +3,6 @@ import Moment from "react-moment";
 
 import {
   BookmarkIcon,
- 
   DotsHorizontalIcon,
   EmojiHappyIcon,
   HeartIcon,
@@ -32,10 +31,8 @@ function Post({ id, username, userImg, img, caption }) {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
   const [likes, setLikes] = useState([]);
-  
 
   const [hasLiked, setHasLiked] = useState(false);
-  
 
   useEffect(() => {
     onSnapshot(
@@ -88,7 +85,7 @@ function Post({ id, username, userImg, img, caption }) {
       {/* header */}
       <div className="flex items-center p-5 ">
         <img
-          className="rounded-full h-12 w-12 object-contain border p-1 mr-3"
+          className="rounded-full h-12 w-12 object-contain border p-1 mr-3 pointer-events-none"
           src={userImg}
           alt=""
         />
@@ -97,7 +94,11 @@ function Post({ id, username, userImg, img, caption }) {
       </div>
 
       {/* img */}
-      <img className=" object-cover w-full" src={img} alt="" />
+      <img
+        className=" pointer-events-none object-cover w-full"
+        src={img}
+        alt=""
+      />
 
       {/* Buttons */}
 
@@ -117,10 +118,7 @@ function Post({ id, username, userImg, img, caption }) {
             <PaperAirplaneIcon className="btn rotate-90" />
           </div>
 
-          
-          <BookmarkIcon  className="btn"
-           />
-          
+          <BookmarkIcon className="btn" />
         </div>
       )}
 
@@ -128,12 +126,12 @@ function Post({ id, username, userImg, img, caption }) {
 
       <p className=" p-5  truncate">
         {session && (
-        <p>
-          {" "}
-          {likes.length > 0 && (
-            <p className=" font-semibold mb-1"> {likes.length} likes</p>
-          )}
-        </p>
+          <p>
+            {" "}
+            {likes.length > 0 && (
+              <p className=" font-semibold mb-1"> {likes.length} likes</p>
+            )}
+          </p>
         )}
 
         <span className="mr-1 font-semibold capitalize">{username}</span>
@@ -150,7 +148,7 @@ function Post({ id, username, userImg, img, caption }) {
               key={comment.id}
             >
               <img
-                className=" h-7 rounded-full "
+                className=" pointer-events-none h-7 rounded-full "
                 src={comment.data().userImage}
                 alt=""
               />
