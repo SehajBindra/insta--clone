@@ -81,7 +81,7 @@ function Header() {
 
               <FiPlusSquare
                 onClick={() => Setopen(true)}
-                className="h-10 w-10 md:h-7 md:w-7 cursor-pointer"
+                className="h-8 w-10 cursor-pointer"
               />
               {/* <UserGroupIcon className="navBtn"/> */}
               <MdOutlineExplore className=" hidden h-7  w-8 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out   " />
@@ -89,7 +89,7 @@ function Header() {
 
               <img
                 onClick={signOut}
-                className="h-5 w-5 rounded-full  cursor-pointer"
+                className="h-7 w-7 rounded-full  cursor-pointer"
                 src={session?.user?.image}
                 alt="profile pic"
               />
