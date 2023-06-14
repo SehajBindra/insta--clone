@@ -61,7 +61,7 @@ function Post({ id, username, userImg, img, caption }) {
       await deleteDoc(doc(db, "posts", id, "likes", session.user.uid));
     } else {
       await setDoc(doc(db, "posts", id, "likes", session.user.uid), {
-        username: session.user.username,
+        username: session?.user.name,
       });
     }
   };
@@ -95,7 +95,7 @@ function Post({ id, username, userImg, img, caption }) {
 
       {/* img */}
       <img
-        className=" pointer-events-none object-cover w-full"
+        className=" pointer-events-none object-cover w-full "
         src={img}
         alt=""
       />
@@ -108,7 +108,7 @@ function Post({ id, username, userImg, img, caption }) {
             {hasLiked ? (
               <HeartIconFilled
                 onClick={likePost}
-                className="btn text-red-500"
+                className=" dark:text-red-500 btn text-red-500"
               />
             ) : (
               <HeartIcon onClick={likePost} className="btn" />

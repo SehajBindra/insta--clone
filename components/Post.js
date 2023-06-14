@@ -61,7 +61,7 @@ function Post({ id, username, userImg, img, caption }) {
       await deleteDoc(doc(db, "posts", id, "likes", session.user.uid));
     } else {
       await setDoc(doc(db, "posts", id, "likes", session.user.uid), {
-        username: session.user.username,
+        username: session?.user.name,
       });
     }
   };
